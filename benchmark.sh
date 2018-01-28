@@ -1,6 +1,6 @@
 #!/bin/bash
 
-base=/data/container_ofbench
+base=/data/containers_openfoam
 
 function test {
   ((time docker run --entrypoint "" -v $base/bench/:/home/openfoam/bench openfoam/openfoam5-paraview54 /home/openfoam/bench/bench.sh) &> $1) &
