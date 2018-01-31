@@ -113,9 +113,13 @@ As we are interested in the throughtput that can be achieved (i.e. the number of
 
 For that, we would calcualte the average runtime per set of concurrent open-foam container jobs, by first collecting the runtime of each job:
 ```
-  # grep real results/*/*
+  # cd $base/containers_openfoam
+  # grep real results/bench.[num jobs]/*
 ```
-
+for example:
+```
+  # grep real results/bench.5/*
+```
 And based on that we can calculate the throughput [jobs/hour]:
 
 Throughput [Jobs/Hour] = 3600 / [Avg job runtime] X [Number of Concurrent Jobs/Containers ran]
