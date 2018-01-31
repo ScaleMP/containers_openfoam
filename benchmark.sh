@@ -24,7 +24,7 @@ mkdir $dir
 for ((i=1; i<=$1; i++))
 do
   test $dir/bench.$i
-  sleep 10
+  sleep 30
 done
 
 #Wait for container(s) to complete
