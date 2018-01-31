@@ -1,10 +1,10 @@
 # Containers Numerical Solver Benchmark for Large Memory Systems
 ## INTRODUCTION
-The benchmark demonstrates the benefit of using high memory/core ratio to be able to run multiple containers concurrently on a single system, in order to achieve high throughput and utilization of overall system resources.
+The benchmark demonstrates the benefit of using high memory per core ratio to be able to run multiple containers concurrently on a single system, in order to achieve high throughput and utilization of overall system resources.
 ## BENCHMARK DESCRIPTION
 The benchmark at hand enables running multiple containers running the open-foam solver, where each container requires peak memory footprint of ~38GB.
 
-On a system with high memory/core ratio, it would be possible to run additional containers concurrently to better utilize all the computer power of a modern server.
+On a system with high memory per core ratio, it would be possible to run additional containers concurrently to better utilize all the computer power of a modern server.
 
 ## SYSTEM AND BENCHMARK INSTALLATION AND CONFIGURATION
 The instructions below assume installation on CentOS 7.3 or newer, but can be easily adjusted to run on other distributions.
@@ -91,7 +91,10 @@ For first run of the benchmark, it is recommended to perform 1 "cold" run for wa
 ```
 
 Each container/job output to a file under $base/containers_openfoam/results/bench.[num jobs].[tag]/bench.[instance]
-
+for example:
+```
+/data/containers_openfoam/results/bench.5.3154/bench.1
+```
 With a valid output similar to the below:
 
 ```
