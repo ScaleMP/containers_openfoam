@@ -116,13 +116,23 @@ For that, we would calcualte the average runtime per set of concurrent open-foam
   # cd $base/containers_openfoam
   # grep real results/bench.[num jobs]/*
 ```
-for example:
+for example, we would get the 4 runtimes for a 4 containers set:
 ```
-  # grep real results/bench.5/*
+  # grep real results/bench.4*/*
+  
+  bench.4.27392/bench.1:real      5m4.807s
+  bench.4.27392/bench.2:real      4m53.278s
+  bench.4.27392/bench.3:real      5m8.363s
+  bench.4.27392/bench.4:real      4m53.839s
+
 ```
 And based on that we can calculate the throughput [jobs/hour]:
 
 Throughput [Jobs/Hour] = 3600 / [Avg job runtime] X [Number of Concurrent Jobs/Containers ran]
+
+Average job runtime = 299.9 sec
+
+Throughput = 3600 / 299.9 X 4 = 48 Jobs/Hour
 
 *THIS SOFTWARE IS PROVIDED BY SCALEMP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL SCALEMP BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*
